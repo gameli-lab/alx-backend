@@ -2,7 +2,9 @@
 '''
 pagination module'''
 
-from typing import Tuple
+import csv
+import math
+from typing import List,Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple:
@@ -15,10 +17,6 @@ def index_range(page: int, page_size: int) -> Tuple:
     ending_index = page * page_size
 
     return (starting_index, ending_index)
-
-import csv
-import math
-from typing import List
 
 
 class Server:

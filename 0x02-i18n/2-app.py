@@ -3,16 +3,16 @@
 0-app module
 """
 
+from flask_babel import Babel
 from flask import Flask, render_template, request
 from typing import Any
-from flask_babel import Babel
 
 
 app = Flask(__name__)
 
 
-@app.route("/")
-def hello() -> Any:
+@app.route('/')
+def index() -> Any:
     """
     renders the index template
     """

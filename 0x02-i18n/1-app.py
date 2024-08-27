@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def hello() -> Any:
+def indwx() -> Any:
     """
     renders the index template
     """

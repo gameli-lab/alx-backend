@@ -9,6 +9,7 @@ from typing import Any
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def hello() -> Any:
     """

@@ -16,6 +16,8 @@ def hello() -> Any:
     renders the index template
     """
     return render_template('0-index.html')
+
+
 class Config:
     """
     Our translation configuration
@@ -24,6 +26,7 @@ class Config:
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
     BABEL_DEFAULT_TIMEZONE = 'UTC'
+
 
 app.config.from_object(Config)
 

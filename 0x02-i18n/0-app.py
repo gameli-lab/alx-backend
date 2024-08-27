@@ -10,8 +10,8 @@ from typing import Any
 app = Flask(__name__)
 
 
-@app.route("/")
-def hello() -> Any:
+@app.route('/')
+def index() -> Any:
     """
     renders the index template
     """

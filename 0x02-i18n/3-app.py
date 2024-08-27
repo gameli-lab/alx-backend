@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-0-app module
+3-app module
 """
 
 from flask_babel import Babel

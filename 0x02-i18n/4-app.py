@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-4-app module
+4-app module - Flask application
 """
 
 from flask_babel import Babel, gettext as _
@@ -39,6 +39,6 @@ def get_locale() -> Any:
 @app.route('/')
 def index() -> Any:
     """
-    renders the index template
+    renders the index template - 4-index.html
     """
     return render_template('4-index.html')

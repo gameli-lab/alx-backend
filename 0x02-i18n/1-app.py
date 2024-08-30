@@ -15,7 +15,7 @@ def indwx() -> Any:
     """
     renders the index template
     """
-    return render_template('0-index.html')
+    return render_template('1-index.html')
 
 
 class Config:

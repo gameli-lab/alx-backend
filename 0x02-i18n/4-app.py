@@ -1,22 +1,15 @@
 #!/usr/bin/env python3
 """
-0-app module
+4-app module
 """
 
-from flask_babel import Babel
+from flask_babel import Babel, gettext as _
 from flask import Flask, render_template, request
 from typing import Any
 
 
 app = Flask(__name__)
-
-
-@app.route('/')
-def index() -> Any:
-    """
-    renders the index template
-    """
-    return render_template('2-index.html')
+babel = Babel(app)
 
 
 class Config:
@@ -37,7 +30,15 @@ def get_locale() -> Any:
     """
     get_locale
     """
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    loc = request.args.get('locale')
+    if loc in LANGUAGES:
+        return loc
+    return request.accept_languages.best_match(LANGUAGES)
 
 
-babel = Babel(app)
+@app.route('/')
+def index() -> Any:
+    """
+    renders the index template
+    """
+    return render_template('4-index.html')

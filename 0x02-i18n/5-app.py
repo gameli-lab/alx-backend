@@ -67,4 +67,4 @@ def index() -> Any:
     """
     renders the index template
     """
-    return render_template('4-index.html')
+    return render_template('5-index.html')

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-0-app module
+2-app module
 """
 
 from flask_babel import Babel
@@ -9,6 +9,7 @@ from typing import Any
 
 
 app = Flask(__name__)
+babel = Babel(app)
 
 
 @app.route('/')
@@ -38,6 +39,3 @@ def get_locale() -> Any:
     get_locale
     """
     return request.accept_languages.best_match(app.config['LANGUAGES'])
-
-
-babel = Babel(app)

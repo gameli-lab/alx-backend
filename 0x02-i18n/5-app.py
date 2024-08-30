@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-4-app module
+5-app module
 """
 
 from flask_babel import Babel, gettext as _
@@ -57,9 +57,9 @@ def get_locale() -> Any:
     get_locale
     """
     loc = request.args.get('locale')
-    if loc in LANGUAGES:
+    if loc in Config.LANGUAGES:
         return loc
-    return request.accept_languages.best_match(LANGUAGES)
+    return request.accept_languages.best_match(Config.LANGUAGES)
 
 
 @app.route('/')

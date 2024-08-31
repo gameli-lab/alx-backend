@@ -59,14 +59,14 @@ def get_locale() -> Any:
     loc = request.args.get('locale')
     if loc in Config.LANGUAGES:
         return loc
-    
+
     if g.user and g.user.get('locale') in Config.LANGUAGES:
         return g.user['locale']
-    
+
     best_match = request.accept_languages.best_match(Config.LANGUAGES)
     if best_match:
         return best_match
-    
+
     return Config.BABEL_DEFAULT_LOCALE
 
 

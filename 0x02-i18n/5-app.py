@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-5-app module
+5-app module - Flask application
 """
 
 from flask_babel import Babel, gettext as _
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, g
 from typing import Any
 
 
@@ -54,7 +54,7 @@ def before_request() -> Any:
 @babel.localeselector
 def get_locale() -> Any:
     """
-    get_locale
+    get_locale - returns the best match with our supported languages
     """
     loc = request.args.get('locale')
     if loc in Config.LANGUAGES:
@@ -65,6 +65,6 @@ def get_locale() -> Any:
 @app.route('/')
 def index() -> Any:
     """
-    renders the index template
+    index - renders the index template
     """
     return render_template('5-index.html')
